@@ -1,6 +1,6 @@
 # flutter_ui_templates
 
-A new Flutter UI project.
+A new Flutter UI project samples.
 
 ## Getting Started
 
