@@ -8,7 +8,7 @@ class MoodDiaryVew extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _firstHalfAnimation =
+    final firstHalfAnimation =
         Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -18,7 +18,7 @@ class MoodDiaryVew extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _secondHalfAnimation =
+    final secondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-1, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -29,7 +29,7 @@ class MoodDiaryVew extends StatelessWidget {
       ),
     ));
 
-    final _moodFirstHalfAnimation =
+    final moodFirstHalfAnimation =
         Tween<Offset>(begin: const Offset(2, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -49,7 +49,7 @@ class MoodDiaryVew extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _imageFirstHalfAnimation =
+    final imageFirstHalfAnimation =
         Tween<Offset>(begin: const Offset(4, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -59,7 +59,7 @@ class MoodDiaryVew extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _imageSecondHalfAnimation =
+    final imageSecondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-4, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -71,9 +71,9 @@ class MoodDiaryVew extends StatelessWidget {
     ));
 
     return SlideTransition(
-      position: _firstHalfAnimation,
+      position: firstHalfAnimation,
       child: SlideTransition(
-        position: _secondHalfAnimation,
+        position: secondHalfAnimation,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 100),
           child: Column(
@@ -84,7 +84,7 @@ class MoodDiaryVew extends StatelessWidget {
                 style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
               ),
               SlideTransition(
-                position: _moodFirstHalfAnimation,
+                position: moodFirstHalfAnimation,
                 child: SlideTransition(
                   position: _moodSecondHalfAnimation,
                   child: const Padding(
@@ -98,9 +98,9 @@ class MoodDiaryVew extends StatelessWidget {
                 ),
               ),
               SlideTransition(
-                position: _imageFirstHalfAnimation,
+                position: imageFirstHalfAnimation,
                 child: SlideTransition(
-                  position: _imageSecondHalfAnimation,
+                  position: imageSecondHalfAnimation,
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(

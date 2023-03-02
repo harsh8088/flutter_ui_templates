@@ -125,26 +125,24 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                     color: DesignCourseAppTheme.nearlyBlue,
                                   ),
                                 ),
-                                Container(
-                                  child: Row(
-                                    children: const <Widget>[
-                                      Text(
-                                        '4.3',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w200,
-                                          fontSize: 22,
-                                          letterSpacing: 0.27,
-                                          color: DesignCourseAppTheme.grey,
-                                        ),
+                                Row(
+                                  children: const <Widget>[
+                                    Text(
+                                      '4.3',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w200,
+                                        fontSize: 22,
+                                        letterSpacing: 0.27,
+                                        color: DesignCourseAppTheme.grey,
                                       ),
-                                      Icon(
-                                        Icons.star,
-                                        color: DesignCourseAppTheme.nearlyBlue,
-                                        size: 24,
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: DesignCourseAppTheme.nearlyBlue,
+                                      size: 24,
+                                    ),
+                                  ],
                                 )
                               ],
                             ),
@@ -195,7 +193,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Container(
+                                  SizedBox(
                                     width: 48,
                                     height: 48,
                                     child: Container(
@@ -276,10 +274,10 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0)),
                   elevation: 10.0,
-                  child: Container(
+                  child: const SizedBox(
                     width: 60,
                     height: 60,
-                    child: const Center(
+                    child: Center(
                       child: Icon(
                         Icons.favorite,
                         color: DesignCourseAppTheme.nearlyWhite,

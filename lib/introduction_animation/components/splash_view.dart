@@ -13,7 +13,7 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
-    final _introductionanimation =
+    final introductionanimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0.0, -1.0))
             .animate(CurvedAnimation(
       parent: widget.animationController,
@@ -24,7 +24,7 @@ class _SplashViewState extends State<SplashView> {
       ),
     ));
     return SlideTransition(
-      position: _introductionanimation,
+      position: introductionanimation,
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -69,7 +69,7 @@ class _SplashViewState extends State<SplashView> {
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(38.0),
-                    color: Color(0xff132137),
+                    color: const Color(0xff132137),
                   ),
                   child: const Text(
                     "Let's begin",

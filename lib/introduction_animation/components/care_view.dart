@@ -8,7 +8,7 @@ class CareView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _firstHalfAnimation =
+    final firstHalfAnimation =
         Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -28,7 +28,7 @@ class CareView extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _relaxFirstHalfAnimation =
+    final relaxFirstHalfAnimation =
         Tween<Offset>(begin: const Offset(2, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -38,7 +38,7 @@ class CareView extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _relaxSecondHalfAnimation =
+    final relaxSecondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-2, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -59,7 +59,7 @@ class CareView extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _imageSecondHalfAnimation =
+    final imageSecondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-4, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -71,7 +71,7 @@ class CareView extends StatelessWidget {
     ));
 
     return SlideTransition(
-      position: _firstHalfAnimation,
+      position: firstHalfAnimation,
       child: SlideTransition(
         position: _secondHalfAnimation,
         child: Padding(
@@ -82,7 +82,7 @@ class CareView extends StatelessWidget {
               SlideTransition(
                 position: _imageFirstHalfAnimation,
                 child: SlideTransition(
-                  position: _imageSecondHalfAnimation,
+                  position: imageSecondHalfAnimation,
                   child: Container(
                     constraints: const BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(
@@ -93,9 +93,9 @@ class CareView extends StatelessWidget {
                 ),
               ),
               SlideTransition(
-                position: _relaxFirstHalfAnimation,
+                position: relaxFirstHalfAnimation,
                 child: SlideTransition(
-                  position: _relaxSecondHalfAnimation,
+                  position: relaxSecondHalfAnimation,
                   child: const Text(
                     "Care",
                     style:

@@ -138,7 +138,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 style: const TextStyle(
                   fontFamily: AppTheme.fontName,
                   fontSize: 16,
-                  color: AppTheme.dark_grey,
+                  color: AppTheme.darkGrey,
                 ),
                 cursorColor: Colors.blue,
                 decoration: const InputDecoration(

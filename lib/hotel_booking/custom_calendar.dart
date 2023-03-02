@@ -98,7 +98,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             setListOfDate(currentMonthDate);
                           });
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.keyboard_arrow_left,
                           color: Colors.grey,
                         ),
@@ -110,7 +110,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                   child: Center(
                     child: Text(
                       DateFormat('MMMM, yyyy').format(currentMonthDate),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 20,
                           color: Colors.black),
@@ -141,7 +141,7 @@ class _CustomCalendarViewState extends State<CustomCalendarView> {
                             setListOfDate(currentMonthDate);
                           });
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.keyboard_arrow_right,
                           color: Colors.grey,
                         ),

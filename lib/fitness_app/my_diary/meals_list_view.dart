@@ -1,9 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_ui_templates/fitness_app/fitness_app_theme.dart';
 import 'package:flutter_ui_templates/fitness_app/models/meals_list_data.dart';
 import 'package:flutter_ui_templates/main.dart';
-import 'package:flutter/material.dart';
-
-import '../../main.dart';
 
 class MealsListView extends StatefulWidget {
   const MealsListView(
@@ -50,7 +48,7 @@ class _MealsListViewState extends State<MealsListView>
           child: Transform(
             transform: Matrix4.translationValues(
                 0.0, 30 * (1.0 - widget.mainScreenAnimation!.value), 0.0),
-            child: Container(
+            child: SizedBox(
               height: 216,
               width: double.infinity,
               child: ListView.builder(
@@ -191,8 +189,8 @@ class MealsView extends StatelessWidget {
                                         ),
                                       ),
                                       const Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 4, bottom: 3),
+                                        padding:
+                                            EdgeInsets.only(left: 4, bottom: 3),
                                         child: Text(
                                           'kcal',
                                           style: TextStyle(
@@ -223,7 +221,8 @@ class MealsView extends StatelessWidget {
                                       padding: const EdgeInsets.all(6.0),
                                       child: Icon(
                                         Icons.add,
-                                        color: HexColor(mealsListData!.endColor),
+                                        color:
+                                            HexColor(mealsListData!.endColor),
                                         size: 24,
                                       ),
                                     ),

@@ -448,7 +448,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       Navigator.push<dynamic>(
                         context,
                         MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => FiltersScreen(),
+                            builder: (BuildContext context) => const FiltersScreen(),
                             fullscreenDialog: true),
                       );
                     },
