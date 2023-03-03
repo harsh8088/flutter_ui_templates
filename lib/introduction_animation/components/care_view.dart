@@ -18,7 +18,7 @@ class CareView extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _secondHalfAnimation =
+    final secondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-1, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -49,7 +49,7 @@ class CareView extends StatelessWidget {
       ),
     ));
 
-    final _imageFirstHalfAnimation =
+    final imageFirstHalfAnimation =
         Tween<Offset>(begin: const Offset(4, 0), end: const Offset(0, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -73,14 +73,14 @@ class CareView extends StatelessWidget {
     return SlideTransition(
       position: firstHalfAnimation,
       child: SlideTransition(
-        position: _secondHalfAnimation,
+        position: secondHalfAnimation,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SlideTransition(
-                position: _imageFirstHalfAnimation,
+                position: imageFirstHalfAnimation,
                 child: SlideTransition(
                   position: imageSecondHalfAnimation,
                   child: Container(

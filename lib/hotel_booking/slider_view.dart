@@ -24,51 +24,49 @@ class _SliderViewState extends State<SliderView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                flex: distValue.round(),
-                child: const SizedBox(),
-              ),
-              Container(
-                width: 170,
-                child: Text(
-                  'Less than ${(distValue / 10).toStringAsFixed(1)} Km',
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Expanded(
-                flex: 100 - distValue.round(),
-                child: const SizedBox(),
-              ),
-            ],
-          ),
-          SliderTheme(
-            data: SliderThemeData(
-              thumbShape: CustomThumbShape(),
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Expanded(
+              flex: distValue.round(),
+              child: const SizedBox(),
             ),
-            child: Slider(
-              onChanged: (double value) {
-                setState(() {
-                  distValue = value;
-                });
-                try {
-                  widget.onChangedistValue!(distValue);
-                } catch (_) {}
-              },
-              min: 0,
-              max: 100,
-              activeColor: HotelAppTheme.buildLightTheme().primaryColor,
-              inactiveColor: Colors.grey.withOpacity(0.4),
-              divisions: 100,
-              value: distValue,
+            SizedBox(
+              width: 170,
+              child: Text(
+                'Less than ${(distValue / 10).toStringAsFixed(1)} Km',
+                textAlign: TextAlign.center,
+              ),
             ),
+            Expanded(
+              flex: 100 - distValue.round(),
+              child: const SizedBox(),
+            ),
+          ],
+        ),
+        SliderTheme(
+          data: SliderThemeData(
+            thumbShape: CustomThumbShape(),
           ),
-        ],
-      ),
+          child: Slider(
+            onChanged: (double value) {
+              setState(() {
+                distValue = value;
+              });
+              try {
+                widget.onChangedistValue!(distValue);
+              } catch (_) {}
+            },
+            min: 0,
+            max: 100,
+            activeColor: HotelAppTheme.buildLightTheme().primaryColor,
+            inactiveColor: Colors.grey.withOpacity(0.4),
+            divisions: 100,
+            value: distValue,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -92,7 +90,7 @@ class CustomThumbShape extends SliderComponentShape {
   @override
   void paint(
     PaintingContext context,
-    Offset thumbCenter, {
+    Offset center, {
     Animation<double>? activationAnimation,
     Animation<double>? enableAnimation,
     bool? isDiscrete,
@@ -112,8 +110,8 @@ class CustomThumbShape extends SliderComponentShape {
     canvas.drawPath(
         Path()
           ..addOval(Rect.fromPoints(
-              Offset(thumbCenter.dx + 12, thumbCenter.dy + 12),
-              Offset(thumbCenter.dx - 12, thumbCenter.dy - 12)))
+              Offset(center.dx + 12, center.dy + 12),
+              Offset(center.dx - 12, center.dy - 12)))
           ..fillType = PathFillType.evenOdd,
         Paint()
           ..color = Colors.black.withOpacity(0.5)
@@ -123,9 +121,9 @@ class CustomThumbShape extends SliderComponentShape {
     final Paint cPaint = Paint();
     cPaint.color = Colors.white;
     cPaint.strokeWidth = 14 / 2;
-    canvas.drawCircle(Offset(thumbCenter.dx, thumbCenter.dy), 12, cPaint);
+    canvas.drawCircle(Offset(center.dx, center.dy), 12, cPaint);
     cPaint.color = colorTween.evaluate(enableAnimation!)!;
-    canvas.drawCircle(Offset(thumbCenter.dx, thumbCenter.dy), 10, cPaint);
+    canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
   }
 
   double convertRadiusToSigma(double radius) {

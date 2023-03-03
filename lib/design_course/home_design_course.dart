@@ -9,7 +9,7 @@ class DesignCourseHomeScreen extends StatefulWidget {
   const DesignCourseHomeScreen({super.key});
 
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  State<DesignCourseHomeScreen> createState() => _DesignCourseHomeScreenState();
 }
 
 class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {

@@ -136,7 +136,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
       ),
       child: Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 156 - 50,
             child: FutureBuilder<bool>(
               future: getData(),

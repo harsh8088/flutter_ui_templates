@@ -19,7 +19,7 @@ class RelaxView extends StatelessWidget {
         ),
       ),
     );
-    final _secondHalfAnimation =
+    final secondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-1, 0)).animate(
       CurvedAnimation(
         parent: animationController,
@@ -67,7 +67,7 @@ class RelaxView extends StatelessWidget {
     return SlideTransition(
       position: firstHalfAnimation,
       child: SlideTransition(
-        position: _secondHalfAnimation,
+        position: secondHalfAnimation,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 100),
           child: Column(

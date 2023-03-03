@@ -11,7 +11,7 @@ class IntroductionAnimationScreen extends StatefulWidget {
   const IntroductionAnimationScreen({Key? key}) : super(key: key);
 
   @override
-  _IntroductionAnimationScreenState createState() =>
+  State<IntroductionAnimationScreen> createState() =>
       _IntroductionAnimationScreenState();
 }
 

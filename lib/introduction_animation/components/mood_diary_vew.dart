@@ -39,7 +39,7 @@ class MoodDiaryVew extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
       ),
     ));
-    final _moodSecondHalfAnimation =
+    final moodSecondHalfAnimation =
         Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-2, 0))
             .animate(CurvedAnimation(
       parent: animationController,
@@ -86,7 +86,7 @@ class MoodDiaryVew extends StatelessWidget {
               SlideTransition(
                 position: moodFirstHalfAnimation,
                 child: SlideTransition(
-                  position: _moodSecondHalfAnimation,
+                  position: moodSecondHalfAnimation,
                   child: const Padding(
                     padding: EdgeInsets.only(
                         left: 64, right: 64, top: 16, bottom: 16),

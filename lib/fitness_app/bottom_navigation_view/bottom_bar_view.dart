@@ -15,7 +15,7 @@ class BottomBarView extends StatefulWidget {
   final List<TabIconData>? tabIconsList;
 
   @override
-  _BottomBarViewState createState() => _BottomBarViewState();
+  State<BottomBarView> createState() => _BottomBarViewState();
 }
 
 class _BottomBarViewState extends State<BottomBarView>
